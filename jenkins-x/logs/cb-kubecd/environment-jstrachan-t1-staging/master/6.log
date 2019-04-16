@@ -1,0 +1,62 @@
+Step: build-step-credential-initializer-5jc2j:
+
+{"level":"warn","ts":1555408112.470158,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1555408112.4727268,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-cb-kubecd-environment-jstrachan-6xwmb:
+
+{"level":"warn","ts":1555408113.650992,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1555408114.259837,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/cb-kubecd/environment-jstrachan-t1-staging\" @ \"v0.0.3\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+9e73adc0b: No Major.Minor.Patch elements found
+time="2019-04-16T09:48:37Z" level=info msg="got "
+Using SHAs from PULL_REFS=master:01d415dd38625d0df0005f9cf82b6a8e13455ada
+time="2019-04-16T09:48:37Z" level=warning msg="no SHAs to merge, falling back to initial cloned commit"
+Step: build-step-setup-**-git-credentials:
+
+{"level":"info","msg":"Generated Git credentials file /workspace/xdg_config/git/credentials\n","time":"2019-04-16T09:48:38Z"}
+Step: build-step-build-helm-apply:
+
+{"level":"info","msg":"Modified file /workspace/source/env/Chart.yaml to set the chart to version 6\n","time":"2019-04-16T09:48:41Z"}
+{"level":"warning","msg":"No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080\n","time":"2019-04-16T09:48:41Z"}
+{"level":"info","msg":"Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io\n","time":"2019-04-16T09:48:42Z"}
+{"level":"info","msg":"Successfully added Helm repository chartmuseum.jenkins-x.io.\n","time":"2019-04-16T09:48:44Z"}
+{"level":"info","msg":"Adding missing Helm repo: jenkins-x-chartmuseum:8080 http://jenkins-x-chartmuseum:8080\n","time":"2019-04-16T09:48:44Z"}
+{"level":"info","msg":"Successfully added Helm repository jenkins-x-chartmuseum:8080.\n","time":"2019-04-16T09:48:44Z"}
+{"level":"info","msg":"Applying helm chart at . as release name ** to namespace **-staging\n","time":"2019-04-16T09:48:58Z"}
+{"level":"info","msg":"Ignoring templates/.gitignore\n","time":"2019-04-16T09:48:58Z"}
+{"level":"info","msg":"Wrote chart values.yaml values.yaml generated from directory tree\n","time":"2019-04-16T09:48:58Z"}
+{"level":"info","msg":"generated helm values.yaml\n","time":"2019-04-16T09:48:58Z"}
+{"level":"info","msg":"\nPipelineSecrets: {}\ncleanup:\n  Annotations:\n    helm.sh/hook: pre-delete\n    helm.sh/hook-delete-policy: hook-succeeded\n  Args:\n  - --cleanup\ncontrollerbuild:\n  enabled: true\ndockerRegistry: gcr.io\nexpose:\n  Annotations:\n    helm.sh/hook: post-install,post-upgrade\n    helm.sh/hook-delete-policy: hook-succeeded\n  Args:\n  - --v\n  - 4\n  config:\n    domain: 35.189.204.50.nip.io\n    exposer: Ingress\n    http: \"true\"\njenkins:\n  Servers:\n    Global:\n      EnvVars:\n        TILLER_NAMESPACE: kube-system\n  enabled: false\nprow: {}\n\n\n","time":"2019-04-16T09:48:58Z"}
+{"level":"info","msg":"Using values files: values.yaml\n","time":"2019-04-16T09:48:58Z"}
+{"level":"info","msg":"Applying chart overrides\n","time":"2019-04-16T09:48:58Z"}
+{"level":"info","msg":"Deleting and cloning the Jenkins X versions repo","time":"2019-04-16T09:48:58Z"}
+{"level":"info","msg":"Delete previous Jenkins X version repo from /builder/home/.**/jenkins-x-versions\n","time":"2019-04-16T09:48:58Z"}
+{"level":"info","msg":"Cloning the Jenkins X versions repo to /builder/home/.**/jenkins-x-versions\n","time":"2019-04-16T09:48:58Z"}
+Enumerating objects: 14, done.
+Counting objects:   7% (1/14)   Counting objects:  14% (2/14)   Counting objects:  21% (3/14)   Counting objects:  28% (4/14)   Counting objects:  35% (5/14)   Counting objects:  42% (6/14)   Counting objects:  50% (7/14)   Counting objects:  57% (8/14)   Counting objects:  64% (9/14)   Counting objects:  71% (10/14)   Counting objects:  78% (11/14)   Counting objects:  85% (12/14)   Counting objects:  92% (13/14)   Counting objects: 100% (14/14)   Counting objects: 100% (14/14), done.
+Compressing objects:   8% (1/12)   Compressing objects:  16% (2/12)   Compressing objects:  25% (3/12)   Compressing objects:  33% (4/12)   Compressing objects:  41% (5/12)   Compressing objects:  50% (6/12)   Compressing objects:  58% (7/12)   Compressing objects:  66% (8/12)   Compressing objects:  75% (9/12)   Compressing objects:  83% (10/12)   Compressing objects:  91% (11/12)   Compressing objects: 100% (12/12)   Compressing objects: 100% (12/12), done.
+Total 827 (delta 3), reused 7 (delta 2), pack-reused 813
+{"level":"warning","msg":"could not find a stable version from charts of . from /builder/home/.**/jenkins-x-versions\nFor background see: https://jenkins-x.io/architecture/version-stream/\n","time":"2019-04-16T09:49:00Z"}
+{"level":"info","msg":"Please lock this version down via the command: ** step create version pr -k charts -n .\n\n","time":"2019-04-16T09:49:00Z"}
+{"level":"info","msg":"Applying generated chart . YAML via kubectl in dir: /tmp/helm-template-workdir-607313782/**/output\n","time":"2019-04-16T09:49:00Z"}
+{"level":"info","msg":"role.rbac.authorization.k8s.io/cleanup configured\nrolebinding.rbac.authorization.k8s.io/cleanup configured\nserviceaccount/cleanup configured\nconfigmap/exposecontroller configured\nrole.rbac.authorization.k8s.io/expose configured\nrolebinding.rbac.authorization.k8s.io/expose configured\nserviceaccount/expose configured\ndeployment.extensions/**-nodey81 configured\nrelease.jenkins.io/nodey81-0.0.1 configured\nservice/nodey81 configured\nservice.serving.knative.dev/**-nodey82 configured\nrelease.jenkins.io/nodey82-0.0.1 configured\nservice.serving.knative.dev/nodey83 created\nrelease.jenkins.io/nodey83-0.0.1 created\n","time":"2019-04-16T09:49:02Z"}
+{"level":"info","msg":"\n","time":"2019-04-16T09:49:02Z"}
+{"level":"info","msg":"Applying Helm hook post-upgrade YAML via kubectl in file: /tmp/helm-template-workdir-607313782/**/helmHooks/env/charts/expose/templates/job.yaml\n","time":"2019-04-16T09:49:02Z"}
+{"level":"info","msg":"job.batch/expose created\n","time":"2019-04-16T09:49:03Z"}
+{"level":"info","msg":"\n","time":"2019-04-16T09:49:03Z"}
+{"level":"info","msg":"Waiting for helm post-upgrade hook Job expose to complete before removing it\n","time":"2019-04-16T09:49:03Z"}
+{"level":"info","msg":"Deleting helm hook sources from file: /tmp/helm-template-workdir-607313782/**/helmHooks/env/charts/expose/templates/job.yaml\n","time":"2019-04-16T09:49:10Z"}
+{"level":"info","msg":"job.batch \"expose\" deleted\n","time":"2019-04-16T09:49:10Z"}
+{"level":"info","msg":"Removing Kubernetes resources from older releases using selector: jenkins.io/chart-release=**,jenkins.io/version!=6 from all pvc configmap release sa role rolebinding secret\n","time":"2019-04-16T09:49:10Z"}
+{"level":"info","msg":"Removing Kubernetes resources from older releases using selector: jenkins.io/chart-release=**,jenkins.io/version!=6,jenkins.io/namespace=**-staging from clusterrole clusterrolebinding\n","time":"2019-04-16T09:49:12Z"}
+Step: build-step-source-mkdir-cb-kubecd-environment-jstrachan-cl7hn:
+
+{"level":"warn","ts":1555408154.2926729,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1555408154.3429859,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /pvc/from-build-pack/workspace\""}
+Step: build-step-source-copy-cb-kubecd-environment-jstrachan-flszf:
+
+{"level":"warn","ts":1555408155.3290565,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1555408155.3406765,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"cp -r /workspace/source/. /pvc/from-build-pack/workspace\""}
