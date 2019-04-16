@@ -1,0 +1,117 @@
+Step: build-step-credential-initializer-fvpls:
+
+{"level":"warn","ts":1555409339.261394,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1555409339.2621772,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-jstrachan-nodey84-master-2nvfb:
+
+{"level":"warn","ts":1555409341.9069018,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1555409344.1453729,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/jstrachan/nodey84\" @ \"v0.0.1\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+9e73adc0b: No Major.Minor.Patch elements found
+time="2019-04-16T10:10:34Z" level=info msg="got "
+Using SHAs from PULL_REFS=master:
+time="2019-04-16T10:10:34Z" level=warning msg="no SHAs to merge, falling back to initial cloned commit"
+Step: build-step-setup-**-git-credentials:
+
+{"level":"info","msg":"Generated Git credentials file /workspace/xdg_config/git/credentials\n","time":"2019-04-16T10:12:21Z"}
+Step: build-step-build-npm-install:
+
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN REPLACE_ME@1.0.0 No repository field.
+npm WARN REPLACE_ME@1.0.0 No license field.
+
+up to date in 0.707s
+found 0 vulnerabilities
+
+Step: build-step-build-npm-test:
+
+
+> REPLACE_ME@1.0.0 test /workspace/source
+> echo "no test specified" && exit 0
+
+no test specified
+Step: build-step-build-container-build:
+
+[36mINFO[0m[0000] Downloading base image node:9-slim           
+ERROR: logging before flag.Parse: E0416 10:12:29.727769       9 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0416 10:12:29.734010       9 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2019/04/16 10:12:29 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:0e0175bbe4f8d9d104590d8d2c591017874e30977cb71aaff1cf6fa99479575c: no such file or directory 
+[36mINFO[0m[0001] Downloading base image node:9-slim           
+2019/04/16 10:12:31 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] Executing 0 build triggers                   
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] Using files from context: [/workspace/source] 
+[36mINFO[0m[0002] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0002] Taking snapshot of full filesystem...        
+[36mINFO[0m[0002] ENV PORT 8080                                
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] EXPOSE 8080                                  
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] WORKDIR /usr/src/app                         
+[36mINFO[0m[0002] cmd: workdir                                 
+[36mINFO[0m[0002] Changed working directory to /usr/src/app    
+[36mINFO[0m[0002] Creating directory /usr/src/app              
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0002] Using files from context: [/workspace/source] 
+[36mINFO[0m[0002] COPY . .                                     
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0002] CMD ["npm", "start"]                         
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+2019/04/16 10:12:32 existing blob: sha256:e01bd28a434b56ffd2a3fe9aa99b9b69aecca69904843edd30b1ee7150d79904
+2019/04/16 10:12:32 existing blob: sha256:7d083412657baa2dafba8d093034ef26f9ed2c90fb6ed95f76bb55aff03ed429
+2019/04/16 10:12:32 existing blob: sha256:a88538b9cd05cfa611e43a25582a95ad7879f6fa708b0386a26b71ee62235bb3
+2019/04/16 10:12:32 existing blob: sha256:196b8e3c919d5639193ba6c6e54774528942041bbc37606631a2250502985c3c
+2019/04/16 10:12:32 existing blob: sha256:5bba3ecb4cd6374a19da45f2a3db0a9c0804984358b3bb4b666c28944016e5ff
+2019/04/16 10:12:35 pushed blob: sha256:ba49378b42fce2a41cbcb7a9f2096e85ca018f8ccbae7759b7350cb170681973
+2019/04/16 10:12:35 pushed blob: sha256:67dccb175b3067d24f18f6f5d9f025118351fba04af62005bc81c956bdc78248
+2019/04/16 10:12:35 pushed blob: sha256:27c3d23afd69c5b389d027b91eb5696fa70f27c2440b5ea9f1c169fa28ae491d
+2019/04/16 10:12:37 gcr.io/**-development/nodey84:0.0.1: digest: sha256:4c2061e82f75123fd37569ede06973e7a3f2e276e9da0ae780fa642f24a8d1af size: 1404
+Step: build-step-build-post-build:
+
+{"level":"info","msg":"no CVE provider running in the current ** namespace so skip adding image to be analysed","time":"2019-04-16T10:12:39Z"}
+Step: build-step-promote-changelog:
+
+{"level":"info","msg":"Converted /workspace/source/charts/nodey84 to an unshallow repository\n","time":"2019-04-16T10:12:44Z"}
+{"level":"info","msg":"Generating change log from git ref e10daf3d8951737a80776e6badc9286ab0700a13 =\u003e 8262c754b7d12be92379ae5bc8f27e6a03b4ea1f\n","time":"2019-04-16T10:12:44Z"}
+{"level":"warning","msg":"Failed to enrich commits with issues: User.jenkins.io \"-0\" is invalid: metadata.name: Invalid value: \"-0\": a DNS-1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')\n","time":"2019-04-16T10:12:44Z"}
+{"level":"warning","msg":"Failed to enrich commits with issues: User.jenkins.io \"-0\" is invalid: metadata.name: Invalid value: \"-0\": a DNS-1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com', regex used for validation is '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*')\n","time":"2019-04-16T10:12:44Z"}
+{"level":"info","msg":"Finding issues in commit messages using git format\n","time":"2019-04-16T10:12:44Z"}
+{"level":"warning","msg":"No release found for jstrachan/nodey84 and tag v0.0.1 so creating a new release\n","time":"2019-04-16T10:12:44Z"}
+{"level":"info","msg":"Updated the release information at https://github.com/jstrachan/nodey84/releases/tag/v0.0.1\n","time":"2019-04-16T10:12:45Z"}
+{"level":"info","msg":"generated: /workspace/source/charts/nodey84/templates/release.yaml\n","time":"2019-04-16T10:12:45Z"}
+{"level":"info","msg":"Created Release nodey84-0-0-1 resource in namespace **\n","time":"2019-04-16T10:12:45Z"}
+{"level":"info","msg":"Updating PipelineActivity jstrachan-nodey84-master-1 with version 0.0.1\n","time":"2019-04-16T10:12:45Z"}
+{"level":"info","msg":"Updated PipelineActivities jstrachan-nodey84-master-1 with release notes URL: https://github.com/jstrachan/nodey84/releases/tag/v0.0.1\n","time":"2019-04-16T10:12:46Z"}
+Step: build-step-promote-helm-release:
+
+{"level":"warning","msg":"No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080\n","time":"2019-04-16T10:12:47Z"}
+{"level":"info","msg":"Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io\n","time":"2019-04-16T10:12:49Z"}
+{"level":"info","msg":"Successfully added Helm repository chartmuseum.jenkins-x.io.\n","time":"2019-04-16T10:12:50Z"}
+{"level":"info","msg":"Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080\n","time":"2019-04-16T10:12:51Z"}
+{"level":"info","msg":"Successfully added Helm repository jenkins-x-chartmuseum.\n","time":"2019-04-16T10:12:51Z"}
+{"level":"warning","msg":"No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080\n","time":"2019-04-16T10:12:51Z"}
+{"level":"info","msg":"Uploading chart file nodey84-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts\n","time":"2019-04-16T10:12:51Z"}
+{"level":"info","msg":"Received 201 response: {\"saved\":true}\n","time":"2019-04-16T10:12:51Z"}
+Step: build-step-promote-**-promote:
+
+{"level":"warning","msg":"prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410","time":"2019-04-16T10:12:53Z"}
+{"level":"info","msg":"Promoting app nodey84 version 0.0.1 to namespace **-staging\n","time":"2019-04-16T10:12:53Z"}
+{"level":"info","msg":"Created Pull Request: https://github.com/cb-kubecd/environment-jstrachan-t1-staging/pull/4\n\n","time":"2019-04-16T10:12:58Z"}
+{"level":"info","msg":"Pull Request https://github.com/cb-kubecd/environment-jstrachan-t1-staging/pull/4 is merged at sha d620004790872a1241ff1c2f28f365071d7fc3cd\n","time":"2019-04-16T10:14:25Z"}
+{"level":"info","msg":"Pull Request merged but we are not waiting for the update pipeline to complete!","time":"2019-04-16T10:14:25Z"}
+{"level":"warning","msg":"Could not find the service URL in namespace **-staging for names nodey84, **-nodey84, **-staging-nodey84\n","time":"2019-04-16T10:14:25Z"}
+Step: build-step-source-mkdir-jstrachan-nodey84-master-7xb8m:
+
+{"level":"warn","ts":1555409669.3026092,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1555409669.3322954,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /pvc/from-build-pack/workspace\""}
+Step: build-step-source-copy-jstrachan-nodey84-master-wxxkt:
+
+{"level":"warn","ts":1555409670.6436434,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1555409670.921621,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"cp -r /workspace/source/. /pvc/from-build-pack/workspace\""}
