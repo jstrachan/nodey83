@@ -1,0 +1,130 @@
+Step: build-step-credential-initializer-n88z4:
+
+{"level":"warn","ts":1555408237.4370527,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1555408237.4389002,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-jstrachan-nodey83-pr-1-serverle-jj8z5:
+
+{"level":"warn","ts":1555408238.3482528,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/backport-container-name-fix\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1555408238.9972494,"logger":"fallback-logger","caller":"git-init/main.go:99","msg":"Successfully cloned \"https://github.com/jstrachan/nodey83\" @ \"a0fd0a4d9919497ed49bf17ef26f1fa3edc93f44\" in path \"/workspace/source\""}
+Step: build-step-place-tools:
+
+Step: build-step-git-merge:
+
+Warning failed to load version: failed to parse version -dev+9e73adc0b: No Major.Minor.Patch elements found
+time="2019-04-16T09:50:42Z" level=info msg="got "
+Using SHAs from PULL_REFS=master:db7cd71eeab11656b79137acd13c3d28e7f9ab3d,1:a0fd0a4d9919497ed49bf17ef26f1fa3edc93f44
+ran git fetch --unshallow origin a0fd0a4d9919497ed49bf17ef26f1fa3edc93f44: db7cd71eeab11656b79137acd13c3d28e7f9ab3d: in 
+ran git checkout master in 
+ran git reset --hard db7cd71eeab11656b79137acd13c3d28e7f9ab3d in 
+ran clean --force -d . in 
+ran git merge a0fd0a4d9919497ed49bf17ef26f1fa3edc93f44 in 
+Step: build-step-build-npm-install:
+
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN REPLACE_ME@1.0.0 No repository field.
+npm WARN REPLACE_ME@1.0.0 No license field.
+
+up to date in 0.646s
+found 0 vulnerabilities
+
+Step: build-step-build-step3:
+
+
+> REPLACE_ME@1.0.0 test /workspace/source
+> echo "no test specified" && exit 0
+
+no test specified
+Step: build-step-build-container-build:
+
+[36mINFO[0m[0000] Downloading base image node:9-slim           
+ERROR: logging before flag.Parse: E0416 09:52:31.385755       9 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0416 09:52:31.390805       9 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2019/04/16 09:52:31 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:0e0175bbe4f8d9d104590d8d2c591017874e30977cb71aaff1cf6fa99479575c: no such file or directory 
+[36mINFO[0m[0001] Downloading base image node:9-slim           
+2019/04/16 09:52:32 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] Executing 0 build triggers                   
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] Using files from context: [/workspace/source] 
+[36mINFO[0m[0002] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0002] Taking snapshot of full filesystem...        
+[36mINFO[0m[0002] ENV PORT 8080                                
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] EXPOSE 8080                                  
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] WORKDIR /usr/src/app                         
+[36mINFO[0m[0002] cmd: workdir                                 
+[36mINFO[0m[0002] Changed working directory to /usr/src/app    
+[36mINFO[0m[0002] Creating directory /usr/src/app              
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0002] Using files from context: [/workspace/source] 
+[36mINFO[0m[0002] COPY . .                                     
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0002] CMD ["npm", "start"]                         
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+2019/04/16 09:52:34 existing blob: sha256:7d083412657baa2dafba8d093034ef26f9ed2c90fb6ed95f76bb55aff03ed429
+2019/04/16 09:52:34 existing blob: sha256:a88538b9cd05cfa611e43a25582a95ad7879f6fa708b0386a26b71ee62235bb3
+2019/04/16 09:52:34 existing blob: sha256:196b8e3c919d5639193ba6c6e54774528942041bbc37606631a2250502985c3c
+2019/04/16 09:52:34 existing blob: sha256:5bba3ecb4cd6374a19da45f2a3db0a9c0804984358b3bb4b666c28944016e5ff
+2019/04/16 09:52:34 existing blob: sha256:e01bd28a434b56ffd2a3fe9aa99b9b69aecca69904843edd30b1ee7150d79904
+2019/04/16 09:52:37 pushed blob: sha256:c6499da4e0646c46258f0ad9f8aa1e4f9e45ec08851c88879ecb6f64b97fa505
+2019/04/16 09:52:37 pushed blob: sha256:cba222248684323b67bb7685bfd7c2f8a32f594fb4f9039b8433c1bada47872d
+2019/04/16 09:52:37 pushed blob: sha256:6578cc704ca2a45eccc9207940b78f6a215379c105dc71470ac2bf2ce787fe70
+2019/04/16 09:52:39 gcr.io/**-development/nodey83:0.0.0-SNAPSHOT-PR-1-1: digest: sha256:a1c4437e7ce507a04a7ee700d1f8518678310a3b5685678cf2a491a723b8344c size: 1404
+Step: build-step-postbuild-post-build:
+
+{"level":"info","msg":"no CVE provider running in the current ** namespace so skip adding image to be analysed","time":"2019-04-16T09:52:40Z"}
+Step: build-step-promote-make-preview:
+
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: gcr.io\/jstrachan\/nodey83|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-1-1/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-1-1" >> requirements.yaml
+** step helm build
+{"level":"warning","msg":"No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080\n","time":"2019-04-16T09:52:41Z"}
+{"level":"info","msg":"Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io\n","time":"2019-04-16T09:52:42Z"}
+{"level":"info","msg":"Successfully added Helm repository chartmuseum.jenkins-x.io.\n","time":"2019-04-16T09:52:43Z"}
+{"level":"info","msg":"Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080\n","time":"2019-04-16T09:52:43Z"}
+{"level":"info","msg":"Successfully added Helm repository jenkins-x-chartmuseum.\n","time":"2019-04-16T09:52:44Z"}
+Step: build-step-promote-**-preview:
+
+{"level":"info","msg":"Creating a preview","time":"2019-04-16T09:52:53Z"}
+{"level":"info","msg":"Commit author email is empty for: a0fd0a4d9919497ed49bf17ef26f1fa3edc93f44\n","time":"2019-04-16T09:52:56Z"}
+{"level":"info","msg":"Looking for commits in: /workspace/source/\n","time":"2019-04-16T09:52:56Z"}
+{"level":"info","msg":"Created environment jstrachan-nodey83-pr-1\n","time":"2019-04-16T09:52:56Z"}
+{"level":"info","msg":"Namespace **-jstrachan-nodey83-pr-1 created \n ","time":"2019-04-16T09:52:56Z"}
+{"level":"info","msg":"expose:\n  Annotations:\n    helm.sh/hook: post-install,post-upgrade\n    helm.sh/hook-delete-policy: hook-succeeded\n  config:\n    domain: 35.189.204.50.nip.io\n    exposer: Ingress\n    http: \"true\"\npreview:\n  image:\n    repository: gcr.io/**-development/nodey83\n    tag: 0.0.0-SNAPSHOT-PR-1-1\n","time":"2019-04-16T09:52:56Z"}
+{"level":"info","msg":"Deleting and cloning the Jenkins X versions repo","time":"2019-04-16T09:52:57Z"}
+{"level":"info","msg":"Delete previous Jenkins X version repo from /builder/home/.**/jenkins-x-versions\n","time":"2019-04-16T09:52:57Z"}
+{"level":"info","msg":"Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions with ref refs/heads/master to /builder/home/.**/jenkins-x-versions\n","time":"2019-04-16T09:52:57Z"}
+Enumerating objects: 14, done.
+Counting objects:   7% (1/14)   Counting objects:  14% (2/14)   Counting objects:  21% (3/14)   Counting objects:  28% (4/14)   Counting objects:  35% (5/14)   Counting objects:  42% (6/14)   Counting objects:  50% (7/14)   Counting objects:  57% (8/14)   Counting objects:  64% (9/14)   Counting objects:  71% (10/14)   Counting objects:  78% (11/14)   Counting objects:  85% (12/14)   Counting objects:  92% (13/14)   Counting objects: 100% (14/14)   Counting objects: 100% (14/14), done.
+Compressing objects:   8% (1/12)   Compressing objects:  16% (2/12)   Compressing objects:  25% (3/12)   Compressing objects:  33% (4/12)   Compressing objects:  41% (5/12)   Compressing objects:  50% (6/12)   Compressing objects:  58% (7/12)   Compressing objects:  66% (8/12)   Compressing objects:  75% (9/12)   Compressing objects:  83% (10/12)   Compressing objects:  91% (11/12)   Compressing objects: 100% (12/12)   Compressing objects: 100% (12/12), done.
+Total 827 (delta 3), reused 7 (delta 2), pack-reused 813
+{"level":"warning","msg":"could not find a stable version from charts of . from /builder/home/.**/jenkins-x-versions\nFor background see: https://jenkins-x.io/architecture/version-stream/\n","time":"2019-04-16T09:52:58Z"}
+{"level":"info","msg":"Please lock this version down via the command: ** step create version pr -k charts -n .\n\n","time":"2019-04-16T09:52:58Z"}
+{"level":"info","msg":"Applying generated chart . YAML via kubectl in dir: /tmp/helm-template-workdir-230024894/preview/output\n","time":"2019-04-16T09:52:58Z"}
+{"level":"info","msg":"role.rbac.authorization.k8s.io/cleanup created\nrolebinding.rbac.authorization.k8s.io/cleanup created\nserviceaccount/cleanup created\nconfigmap/exposecontroller created\nrole.rbac.authorization.k8s.io/expose created\nrolebinding.rbac.authorization.k8s.io/expose created\nserviceaccount/expose created\nservice.serving.knative.dev/nodey83 created\n","time":"2019-04-16T09:52:59Z"}
+{"level":"info","msg":"\n","time":"2019-04-16T09:52:59Z"}
+{"level":"info","msg":"Applying Helm hook post-upgrade YAML via kubectl in file: /tmp/helm-template-workdir-230024894/preview/helmHooks/preview/charts/expose/templates/job.yaml\n","time":"2019-04-16T09:52:59Z"}
+{"level":"info","msg":"job.batch/expose created\n","time":"2019-04-16T09:52:59Z"}
+{"level":"info","msg":"\n","time":"2019-04-16T09:52:59Z"}
+{"level":"info","msg":"Waiting for helm post-upgrade hook Job expose to complete before removing it\n","time":"2019-04-16T09:52:59Z"}
+{"level":"info","msg":"Deleting helm hook sources from file: /tmp/helm-template-workdir-230024894/preview/helmHooks/preview/charts/expose/templates/job.yaml\n","time":"2019-04-16T09:53:10Z"}
+{"level":"info","msg":"job.batch \"expose\" deleted\n","time":"2019-04-16T09:53:11Z"}
+{"level":"info","msg":"Removing Kubernetes resources from older releases using selector: jenkins.io/chart-release=preview,jenkins.io/version!=0.0.0-SNAPSHOT-PR-1-1 from all pvc configmap release sa role rolebinding secret\n","time":"2019-04-16T09:53:11Z"}
+{"level":"info","msg":"Removing Kubernetes resources from older releases using selector: jenkins.io/chart-release=preview,jenkins.io/version!=0.0.0-SNAPSHOT-PR-1-1,jenkins.io/namespace=**-jstrachan-nodey83-pr-1 from clusterrole clusterrolebinding\n","time":"2019-04-16T09:53:12Z"}
+{"level":"warning","msg":"Could not find the service URL in namespace **-jstrachan-nodey83-pr-1 for names nodey83, preview, **-jstrachan-nodey83-pr-1-preview, preview-nodey83\n","time":"2019-04-16T09:53:12Z"}
+{"level":"info","msg":"Updating PipelineActivities jstrachan-nodey83-pr-1-1 which has status Running\n","time":"2019-04-16T09:53:12Z"}
+Step: build-step-source-mkdir-jstrachan-nodey83-pr-1-serverle-lgqj7:
+
+{"level":"warn","ts":1555408395.2954779,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1555408395.364376,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /pvc/from-build-pack/workspace\""}
+Step: build-step-source-copy-jstrachan-nodey83-pr-1-serverle-vdj4r:
+
+{"level":"warn","ts":1555408397.088854,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1555408397.1319253,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"cp -r /workspace/source/. /pvc/from-build-pack/workspace\""}
